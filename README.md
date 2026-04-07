@@ -23,11 +23,11 @@ Scripts and readme's for each figure are located in the figure directories:
 We also provide:
 
 <ul>
- <li> utils      -    a set of funcions needed analsyis</li>  
- <li> aux_files  -   a set of misc files created and used for plotting and analysis/li>
+ <li> <b>.\utils\</b>      -    a set of funcions needed analsyis</li>  
+ <li> <b>.\ aux_files\</b>  -   a set of misc files created and used for plotting and analysis/li>
 </ul> 
   
-User is responsible for accessing data. See .\docs\data_and_software_access.pdf for links to datasets used in this paper
+User is responsible for accessing data. See [data_and_software_access.pdf](/docs/data_and_software_access.pdf)  for links to datasets used in this paper
 
-A specific list of SWOT HR Raster and ICESat-2 ATL06 data used in this paper is provided in: .\docs\data_file_list.pdf
+A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure in this paper is provided in [data_file_list.pdf](\docs\data_file_list.pdf)
 
