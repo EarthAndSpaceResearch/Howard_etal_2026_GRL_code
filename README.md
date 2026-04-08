@@ -17,7 +17,7 @@ Scripts and readme's for each figure are located in the figure directories:
 
 <li> <b>Figure 2:  Example of corrections applied to SWOT HR WSE for a small region of Larsen C ice shelf.   </b></li> 
 
-<li> <b>Figure 3:  Examples of ice shelf processes observed with repeat SWOT HR acquisitions. Left column shows observations of ocean-driven elevation change and ice flexure; right column shows crevasse deepening. </b></li> 
+<li> <b>Figure 3:  Examples of ice shelf processes observed with repeat SWOT HR acquisitions.  </b></li> 
 </ul>
 
 We also provide:
