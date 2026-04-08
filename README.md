@@ -29,5 +29,5 @@ We also provide:
   
 User is responsible for accessing data. See [data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper
 
-A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure in this paper is provided in [data_file_list.pdf](\docs\data_file_list.pdf)
+A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure in this paper is provided in [data_file_list.pdf](docs/data_file_list.pdf)
 
