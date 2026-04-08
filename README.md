@@ -1,11 +1,10 @@
-# Howard_etal_2026_GRL_code
-
+# Howard et al., 2026 code
 
 <b> “SWOT High-Rate Raster Data Reveals Antarctic Ice Shelf Motion and Change in Response to Ocean and Ice Dynamics” </b>
 
-Papper citation to add...
+Paper citation to add...
 
-The paper’s goal was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves, including validation with ICESat-2 and the application of necessary corrections.
+This paper’s goal was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  We provide an example of validation with ICESat-2 data, and the application of necessary corrections.
 
 This repository provides scripts to process data and recreate figures from our GRL paper published in 2026. 
 
