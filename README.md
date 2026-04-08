@@ -24,10 +24,10 @@ We also provide:
 
 <ul>
  <li> <b>.\utils\</b>      -    a set of funcions needed analsyis</li>  
- <li> <b>.\ aux_files\</b>  -   a set of misc files created and used for plotting and analysis/li>
+ <li> <b>.\ aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
 </ul> 
   
-User is responsible for accessing data. See [data_and_software_access.pdf](/docs/data_and_software_access.pdf)  for links to datasets used in this paper
+User is responsible for accessing data. See [data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper
 
 A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure in this paper is provided in [data_file_list.pdf](\docs\data_file_list.pdf)
 
