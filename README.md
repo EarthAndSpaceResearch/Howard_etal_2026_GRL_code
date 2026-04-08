@@ -4,7 +4,7 @@
 
 Paper citation to add...
 
-This paper’s goal was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  We provide an example of validation with ICESat-2 data, and the application of necessary corrections.
+This paper’s goal was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  As part of this work, We provide an example of the validation of SWOT HR Raster using ICESat-2 ATL06 data, and the application of necessary corrections. 
 
 This repository provides scripts to process data and recreate figures from our GRL paper published in 2026. 
 
