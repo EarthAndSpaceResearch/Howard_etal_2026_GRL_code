@@ -6,7 +6,7 @@ Paper citation to add...
 
 This paper’s goal was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  As part of this work, We provide an example of the validation of SWOT HR Raster using ICESat-2 ATL06 data, and the application of necessary corrections. 
 
-This repository provides scripts to process data and recreate figures from our GRL paper published in 2026. 
+This repository provides MATLAB scripts to process data and recreate figures from our *Geophysical Research Letters* paper published in 2026. 
 
 
 Scripts and readme's for each figure are located in the figure directories:
@@ -26,7 +26,7 @@ We also provide:
  <li> <b>.\ aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
 </ul> 
   
-User is responsible for accessing data. See [Howard_et_al2026_data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper
+User is responsible for accessing data. See [Howard_et_al2026_data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper.
 
 A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure in this paper is provided in [data_file_list.pdf](docs/data_file_list.pdf)
 
