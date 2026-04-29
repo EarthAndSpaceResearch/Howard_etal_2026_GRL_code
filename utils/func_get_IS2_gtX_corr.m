@@ -66,6 +66,10 @@ try
         [ot_z]=tmd_predict(Model,lat6,lon6,time_dt,'h');
 
     % apply geophysical corrections
+    % h_li: Land-Ice Segment Height [m]
+    % geoid_h: Geoid height [m]
+    % geoid_free2mean: Geoid free-to-mean conversion [m]
+    % tide_earth_free2mean: Solid earth tide free-to-mean conversion [m]
     %  IS2_corr= h_li - (geoid + geoid_free2mean) + earth_tide _free2mean - ocean_tides  - DAC 
      gtX.atl06_Hcor=h_li-(geoid_h + geoid_f2m)  + tide_earth_f2m - ot_z -dac ;
      gtX.x=x6;
