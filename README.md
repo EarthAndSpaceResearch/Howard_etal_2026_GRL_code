@@ -30,3 +30,5 @@ User is responsible for accessing data. See [Howard_et_al2026_data_and_software_
 
 A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure in this paper is provided in [data_file_list.pdf](docs/data_file_list.pdf)
 
+The published analysis and figure preperation was performed in MATLAB.  However, we provide and additional set of code for those users wishing to preform similar analyses with Python.
+
