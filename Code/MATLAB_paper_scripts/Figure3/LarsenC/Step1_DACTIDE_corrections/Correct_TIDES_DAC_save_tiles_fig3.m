@@ -64,16 +64,17 @@ for i=1:m
     [xx,yy]= mapll(lat,lon,SLAT,SLON,HEMI);
 
 
-    %% read time information from SWOT and find matching DAC file name
+    %% read time information from SWOT and find matching DAC file names
    
-    [swot_time,fnameDAC]=func_readswottime_findDACdatematch(A(i).name)
+    [swot_time,fnameDAC1,fnameDAC2,DAC_time1_jd,DAC_time2_jd]=func_readswottime_find_DAC_files(A(i).name);
 
     swot_time_dt(i)=datetime(swot_time.tileyr,swot_time.tilemm,swot_time.tiledy,swot_time.tilehr,swot_time.tilemin,swot_time.tilesec);
 
-    %% read in DAC data 
+     %% read and interpolate DAC data to SWOT time 
     dirD=['Z:\MOG2d\' num2str(swot_time.tileyr) '\'];   % Store Aviso DAC files Sorted by year
   
-    [lonD2, latD2, xD, yD, DAC]=func_load_DAC_data(fnameDAC,SLAT,SLON,HEMI, dirD);
+    [lonD2, latD2, xD, yD, DAC,swotJD]=func_read_and_interp_DAC_data(fnameDAC1,fnameDAC2,SLAT,SLON,HEMI, dirD, swot_time,DAC_time1_jd,DAC_time2_jd);
+
    
 
     %% Apply corrections

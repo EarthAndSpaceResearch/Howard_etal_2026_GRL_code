@@ -1,5 +1,5 @@
 %% Howard et al., 2026 GRL paper Figure 2 plotting script
-%  this reads in the files created in Steps 1 and 2
+%  this reads in files created in Steps 1 and 2
 %
 %  this script also requires the additional auxillary files:
 %      \aux_files\streamline_1day_LarC.mat
@@ -16,7 +16,7 @@ clear; clf
 T1=load(".\step1_correct_advect_tiles\corrected_DACTIDES\SWOT_HR_raster_100m_034_115_016F_20250612_correctedDACTIDES.mat");
 % last tile corrected
 T6=load(".\step1_correct_advect_tiles\corrected_DACTIDES\SWOT_HR_raster_100m_039_115_016F_20250925_correctedDACTIDES.mat");
-%first tile corrected & advected
+%first til.e corrected & advected
 T1A=load(".\step1_correct_advect_tiles\corrected_advected\SWOT_HR_raster_100m_034_115_016F_20250612_correctedDACTIDES_adv_to_20250925.mat");
 
 
@@ -333,5 +333,4 @@ set(ca(3),'Position',[0.60 0.70 0.37 0.25],'XTickLabel',[])
 set(ca(6),'Position',[0.60 0.40 0.37 0.25],'XTickLabel',[])
 set(ca(9),'Position',[0.60 0.10 0.37 0.25])
 
-return
-print Figure2_9panel_FINAL.png -f10 -dpng -r300
+print Figure2_FINAL_450dpi.png -f10 -dpng -r450

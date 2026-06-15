@@ -49,7 +49,7 @@ ax=[-2060 -2010 1050 1110]; % axis limits
 ax_full=[-2550 -1900 950 1400];  % For panel (a)
 
 ax_fig2=[-2220 -2160 1040 1100]; %to plot area used in fig 2
-
+ax_fig3=[-2120 -2095 1060 1085];  %to plot area used in fig 3a
 %limits for histogram - all beams : only use where x<-2022 and x > -2050
 lowlim1=-2043; uplim1=-2015;
 lowlim2=-2050; uplim2=-2022;  % Susan's default for histogramming
@@ -140,6 +140,8 @@ rectangle('Position', [ax(1),ax(3), ax(2)-ax(1), ax(4)-ax(3)],...
     'LineWidth',2,'EdgeColor','y')
 rectangle('Position', [ax_fig2(1),ax_fig2(3), ax_fig2(2)-ax_fig2(1), ax_fig2(4)-ax_fig2(3)],...
     'LineWidth',2,'EdgeColor','#fc9f1c')
+rectangle('Position', [ax_fig3(1),ax_fig3(3), ax_fig3(2)-ax_fig3(1), ax_fig3(4)-ax_fig3(3)],...
+    'LineWidth',2,'EdgeColor','#ECFFDC')
 
 
 %% Zoomed SWOT with IS2 lines
@@ -191,7 +193,11 @@ plot(gt2.x,gt2.atl06_Hcor,'.','Color', '#A2142F','MarkerSize',3)
 xlim(tr_lim);
 ylim([-1 35]);
 
-legend('{\it WSE_{corr}}','{\it h_{IS2,corr}}','FontSize',0.9*fs)
+% Legend
+[~,hleg1]=legend('{\it WSE_{corr}}','{\it h_{IS2,corr}}','FontSize',0.9*fs,'Position',[0.7984596555014,0.852857142857143,0.098181816637516,0.081941124726054]);
+objhl = findobj(hleg1, 'type', 'line');
+set(objhl, 'Markersize', 12);
+
 grid on; set(gca,'layer','top','GridAlpha',0.5)
 set(gca,'Xtick',[tr_lim(1):10:tr_lim(2)])
 set(gca,'Ytick',[0:10:45])
@@ -246,14 +252,19 @@ xt=xlimits(1)+0.03*diff(xlimits);
 yt=ylimits(2)-0.07*diff(ylimits);
 text(-1,660,'{\bf (e)}','FontSize',1.1*fs, ...
     'HorizontalAlignment','left','VerticalAlignment','middle')
-hr=rectangle('Position',[0.10 390 0.95 220],'FaceColor','w');
-text(0.12,550,'mean: -0.17 m','FontSize',fs)
-text(0.12,450,'std:       0.18 m','FontSize',fs)
+% hr=rectangle('Position',[0.10 390 0.95 220],'FaceColor','w');
+% text(0.12,550,'mean: -0.17 m','FontSize',fs)
+% text(0.12,450,'std:       0.18 m','FontSize',fs)
 
 % calculate values for yellow sections:
 
 mean_dh_val=mean(Alldh)
 StDev_val=std(Alldh)
+annotation(gcf,'textbox',...
+    [0.718922077922077 0.21 0.105623376623378 0.0669841269841268],...
+    'String',{['mean:  ' num2str(mean_dh_val,'%5.2f') ' m'],['std:       ' num2str(StDev_val,'%5.2f') ' m']},...
+    'FitBoxToText','off',...
+    'BackgroundColor',[1 1 1], 'FontSize',0.9*fs);
 
 
 %% Clean up
@@ -280,5 +291,5 @@ set(hc(1),'Position',[0.39 0.15 0.01 0.35],'FontSize',fs)
 
 hc(1).Label.String='SWOT {\it WSE} (m)';
 
-return
-print Figure1_FINAL_SWOT_vs_ICESat2.png -f10 -dpng -r300
+
+print Figure1_FINAL_450dpi.png -f10 -dpng -r450

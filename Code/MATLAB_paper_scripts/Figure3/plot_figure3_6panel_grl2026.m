@@ -1,3 +1,4 @@
+%% 
 %% Howard et al., 2026 GRL paper Figure 3 plotting script
 %  
 %  this reads in files created in the LarsenC and Venable subdirectories
@@ -7,7 +8,7 @@
 %
 %  this script also requires:
 %     plot_moa
-%     cmocean amd brewermap for colormaps
+%     cmocean amd Brewermap for colormaps
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear all
@@ -38,7 +39,7 @@ low_h=tilelow.wse;   % -tilelow.dacI;
 %% Make 6-panel figure, GZ flexure on left column, Venable rift growth on right
 figure(20);clf
 
-axm=[-2120 -2095 1050 1085]; % Tighter crop
+%axm=[-2120 -2095 1050 1085]; % Tighter crop
 axm=[-2120 -2095 1060 1085]; % Tighter still for Transect B
 
 %% Map of maximum range
@@ -47,8 +48,9 @@ hs(1)=subplot(3,2,1);
 pcolor(tileHigh.xx,tileHigh.yy,diffh);shading interp; 
 hc(1)=colorbar; clim([0 3.5]); hs(1).Colormap=cm1;
 hold on
-moacol=[255 204 153]/255; % Orange
-plot_moa(3,moacol,SLAT,SLON,HEMI);
+%moacol=[233, 40, 247]/255  
+moacol=[255, 69, 205]/255
+plot_moa(5,moacol,SLAT,SLON,HEMI);
 
 % Draw the transect line
 ptA = [-2106.73, 1074.11];
@@ -62,7 +64,7 @@ x_int= linspace(ptA(1), ptB(1), num_points);
 y_int = linspace(ptA(2), ptB(2), num_points);
 
 loc=find(y_int>1066 & y_int<1073); x_int=x_int(loc); y_int=y_int(loc);
-plot(x_int,y_int,'Color','#BE27F5','LineWidth',3)
+plot(x_int,y_int,'Color','#7b2be3','LineWidth',3)
 axis('equal'); axis(axm)
 xlabel('X coordinate (km)','FontSize',fs)
 ylabel('Y coordinate (km)','FontSize',fs)
@@ -182,7 +184,7 @@ load('.\venable\step2_extract_transect\venable_transect.mat');
 T1adv=load('.\venable\step1_correct_advect\corrected_advected\SWOT_HR_raster_100m_025_199_010F_20241210_correctedDACTIDES_adv_to_20250907.mat');
 TE=load('.\venable\step1_correct_advect\corrected_DACTIDES\SWOT_HR_raster_100m_038_199_010F_20250907_correctedDACTIDES.mat');
 
-
+IceFront_mask=load('..\aux_files\venable_ts34_mask')
 ax=[-1855 -1840 120 135]; % Tight crop
 
 diffh=TE.h_swot-T1adv.h_SwotAdv;
@@ -200,14 +202,24 @@ plot_moa(.1,'w',SLAT,SLON,HEMI);
 hold on
 axis('equal')
 axis(ax)
-plot(x_int,y_int','Color','#BE27F5','LineWidth',3)
+dc=1
+%moacol=[247 67 12]/255    %[44 145 133]/255       %[173 247 12]/255
+%plot_moa(4,moacol,SLAT,SLON,HEMI);
+contour(IceFront_mask.x(1:dc:end),IceFront_mask.y(1:dc:end),...
+    IceFront_mask.icefront_mask(1:dc:end,1:dc:end),[1 1],...
+    'Color','#F75F4D','LineWidth',2)
+
+plot(x_int,y_int','Color','#7b2be3','LineWidth',3)   %old #BE27F5
 text(-1854,134,'(d)','FontSize',1.2*fs,'FontWeight','bold',...
     'HorizontalAlignment','center','VerticalAlignment','middle',...
     'BackgroundColor','w')
-text(-1852.5,122.5,['No HR';' data'],'FontSize',1.2*fs,'FontWeight','bold',...
+text(-1852.,122.,['No HR';' data'],'FontSize',1.2*fs,'FontWeight','bold',...
     'HorizontalAlignment','center','VerticalAlignment','middle')
 text(-1842.5,127.5,['Venable';'  Ice  ';' Shelf '],'FontSize',1.2*fs,'FontWeight','bold',...
     'HorizontalAlignment','center','VerticalAlignment','middle','BackgroundColor','w')
+text(-1852.13392857143,131.616071428571,['sea ice';'& ocean'],'FontSize',1.2*fs,'FontWeight','bold',...
+    'HorizontalAlignment','center','VerticalAlignment','middle','BackgroundColor','w')
+
 % Column title
 text(-1847.5,135.6,'Crevasse deepening','FontSize',1.2*fs,'FontWeight','bold',...
     'HorizontalAlignment','center','VerticalAlignment','bottom')
@@ -269,18 +281,21 @@ pause(1)
 xlab6={'-1849',' ','-1848',' ','-1847',' ','-1846',' '};
 set(hs(6),'Position',[0.52 0.07 0.35 0.17],'FontSize',fs,...
     'xlim',[-1849 -1845.5],'ylim',[-7 1.7],'XTickLabel',xlab6)
+pause(1)
 set(hs(5),'Position',[0.52 0.27 0.35 0.17],'FontSize',fs,...
      'xlim',[-1849 -1845.5],'ylim',[20 52],'XTickLabel',[])
+pause(1)
 set(hs(4),'Position',[0.53 0.45 0.30 0.45],'FontSize',fs)
-
+pause(1)
 set(hc(1),'Position',[0.40 0.55 0.01 0.25],'FontSize',fs)
 hc(1).Label.String='{\it {\Delta}WSE} (m)';
+pause(1)
 
 set(hc(4),'Position',[0.84 0.55 0.01 0.25],'FontSize',fs)
 hc(4).Label.String='Advected {\it{\Delta}WSE_{corr}} (m)';
 
-return
-print LCIS_GZ&VenableRift_TrB_for_paper_F3_FINAL.png -f20 -dpng -r300
+
+print fig3_FINAL_450dpi.png -f20 -dpng -r450
 
 
 

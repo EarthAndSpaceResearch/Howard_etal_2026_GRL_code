@@ -24,11 +24,7 @@ HEMI='s';
 %Model='Model_CATS2008';
 Model='CATS2008_v2023.nc'
 
-%% DAC file name and Path
-%  See Julian date conversion for CNES files, see
-%  https://www.aviso.altimetry.fr/en/data/tools/calendar-days-or-julian-days/convert-calendar-days-in-cnes-or-nasa-julian-days.html
-dirD='..\GRL2026_paperdata\fig1\validation_files\';
-fnameD='dac_dif_27418_12.nc'; 
+
 
 %% atl06 filname and path
 dir06='..\GRL2026_paperdata\fig1\validation_files\';
@@ -38,25 +34,21 @@ fn06='ATL06_20250125173907_06202610_006_01.h5';
 dir='..\GRL2026_paperdata\fig1\validation_files\';
 fname='SWOT_L2_HR_Raster_100m_UTM20D_N_x_x_x_027_328_140F_20250125T101527_20250125T101548_PIC2_01.nc';
 
+%% DAC file name and Path
+dacyear=fname(52:55);   % data organized by year 
+dirD=['Z:\MOG2d\' dacyear '\'];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% read DAC file for swot
 %
+  
+    [swot_time,fnameDAC1,fnameDAC2,DAC_time1_jd,DAC_time2_jd]=func_readswottime_find_DAC_files(fname);
+    [lonD2, latD2, xD, yD, dac,swotJD]=func_read_and_interp_DAC_data(fnameDAC1,fnameDAC2,SLAT,SLON,HEMI, dirD, swot_time,DAC_time1_jd,DAC_time2_jd);
 
-srcD=[dirD fnameD];
-
-dac=ncread(srcD,'dac');
-latD=ncread(srcD,'latitude');
-lonD=ncread(srcD,'longitude');
-
-%reduce DAC data to data below 40 deg S
-idx=find(latD<-40);
-nlatD=latD(idx);
-ndac=dac(:,idx);
-[latD2,lonD2]=meshgrid(nlatD,lonD);
-
-%convert to PS
-[xD,yD]= mapll(latD2,lonD2,SLAT,SLON,HEMI);
+    %check times
+    % disp(['DAC filemames:   ' fnameDAC1 '    ' fnameDAC2])
+    % disp(['SWOT jd: ' num2str(swotJD)])
+    % disp(['DAC  jd: ' num2str(DAC_time1_jd)  '    ' num2str(DAC_time2_jd)])
 
 
 
@@ -125,19 +117,19 @@ FS= scatteredInterpolant(X1d_cl,Y1d_cl,wse1d_cl,'linear','none');
 
 % gt1l
 wseI1=FS(gt1.x,gt1.y); % interpolate SWOT data onto IS2 track locations
-dacline1=griddata(xD,yD,ndac,gt1.x,gt1.y); % get dac for SWOT along IS2 track
+dacline1=griddata(xD,yD,dac,gt1.x,gt1.y); % get dac for SWOT along IS2 track
 [swottide1]=tmd_predict(Model,gt1.lat,gt1.lon, swot_time_dt,'h'); % get tide for SWOT
 h_Swot_gt1_corr=wseI1-swottide1 -dacline1; %correct swot
 
 % gt2l
 wseI2=FS(gt2.x,gt2.y); % interpolate SWOT data onto IS2 track locations
-dacline2=griddata(xD,yD,ndac,gt2.x,gt2.y); % get dac for SWOT along IS2 track
+dacline2=griddata(xD,yD,dac,gt2.x,gt2.y); % get dac for SWOT along IS2 track
 [swottide2]=tmd_predict(Model, gt2.lat,gt2.lon,swot_time_dt,'h'); % get tide for SWOT
 h_Swot_gt2_corr=wseI2-swottide2 -dacline2; %correct swot
 
 % gt3l
 wseI3=FS(gt3.x,gt3.y); % interpolate SWOT data onto IS2 track locations
-dacline3=griddata(xD,yD,ndac,gt3.x,gt3.y); % get dac for SWOT along IS2 track
+dacline3=griddata(xD,yD,dac,gt3.x,gt3.y); % get dac for SWOT along IS2 track
 [swottide3]=tmd_predict(Model,gt3.lat,gt3.lon, swot_time_dt,'h'); % get tide for SWOT
 h_Swot_gt3_corr=wseI3-swottide3 -dacline3; %correct swot line
 
@@ -149,4 +141,4 @@ h_Swot_gt3_corr=wseI3-swottide3 -dacline3; %correct swot line
 
  
 
-save fig1_variables_GRL2026.mat gt1 gt2 gt3 SWOT h_Swot_gt1_corr h_Swot_gt2_corr h_Swot_gt3_corr dh_gt1 dh_gt2 dh_gt3   fname fn06 fnameD 
+save fig1_variables_GRL2026.mat gt1 gt2 gt3 SWOT h_Swot_gt1_corr h_Swot_gt2_corr h_Swot_gt3_corr dh_gt1 dh_gt2 dh_gt3   fname fn06 fnameDAC1 fnameDAC2
