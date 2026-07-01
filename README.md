@@ -9,7 +9,7 @@ The goal of Howard et al, 2026 was to illustrate the potential applications of S
 This repository provides MATLAB scripts to process data and recreate figures from our *Geophysical Research Letters* paper published in 2026. 
 
 
-Scripts and readme's for each figure are located in the figure directories:
+Scripts and readme's for each figure are located in the Code directory and organized by figure:
 <ul>
 
 <li> <b>Figure 1:  Examples of HR Raster data coverage, and validation of SWOT using ICESat-2 altimetry.  </b></li> 
@@ -19,12 +19,16 @@ Scripts and readme's for each figure are located in the figure directories:
 <li> <b>Figure 3:  Examples of ice shelf processes observed with repeat SWOT HR acquisitions.  </b></li> 
 </ul>
 
-We also provide:
+In the Code directory, we also provide:
 
 <ul>
- <li> <b>.\code\utils\</b>      -    a set of funcions needed analsyis</li>  
- <li> <b>.\code\aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
- <li> <b>.\Additional_validation_figures\</b>  -   a set of additional validation figures for various ice shelves around antarctica, as described in Supporting Information document</li></li>
+ <li> <b> utils\</b>      -    a set of funcions needed analsyis</li>  
+ <li> <b> aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
+</ul>
+
+As discussed in our Supporting Information document, we have also provide additional figures comparing SWOT and ICESAT-2:
+<ul> 
+ <li> <b>.\Additional_validation_figures\</b>  -  validation figures for various ice shelves around Antarctica/li></li>
 </ul> 
   
 User is responsible for accessing data. See [Howard_et_al2026_data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper.
