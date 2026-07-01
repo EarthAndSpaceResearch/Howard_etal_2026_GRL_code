@@ -2,9 +2,9 @@
 
 <b>Code for anaysis and validation of SWOT High-Rate Raster data over Antarctic Ice Shelves </b>
 
-Howard, S. L., Katz, Z. S., Padman, L., Siefried, M. R., Abrahams, E., Snow, T. M. (2026). SWOT High-Rate Raster Data Reveals Antarctic Ice Shelf Motion and Change in Response to Ocean and Ice Dynamics. Geoohysical Research Letters
+Howard, S. L., Katz, Z. S., Padman, L., Siefried, M. R., Abrahams, E., Snow, T. M. (2026). SWOT High-Rate Raster Data Reveals Antarctic Ice Shelf Motion and Change in Response to Ocean and Ice Dynamics. *Geophysical Research Letters* (accepted)
 
-This paper’s goal was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  As part of this work, We provide an example of the validation of SWOT HR Raster using ICESat-2 ATL06 data, and the application of necessary corrections. 
+The goal of Howard et al, 2026 was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  As part of this work, ee provide an example of the validation of SWOT HR Raster using ICESat-2 ATL06 data, and the application of necessary corrections. 
 
 This repository provides MATLAB scripts to process data and recreate figures from our *Geophysical Research Letters* paper published in 2026. 
 
@@ -22,8 +22,9 @@ Scripts and readme's for each figure are located in the figure directories:
 We also provide:
 
 <ul>
- <li> <b>.\utils\</b>      -    a set of funcions needed analsyis</li>  
- <li> <b>.\ aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
+ <li> <b>.\code\utils\</b>      -    a set of funcions needed analsyis</li>  
+ <li> <b>.\code\aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
+ <li> <b>.\Additional_validation_figures\</b>  -   a set of additional validation figures for various ice shelves around antarctica, as described in Supporting Information document</li></li>
 </ul> 
   
 User is responsible for accessing data. See [Howard_et_al2026_data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper.
