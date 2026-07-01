@@ -28,7 +28,7 @@ In the Code directory, we also provide:
 
 As discussed in our Supporting Information document, we have also provide additional figures comparing SWOT and ICESAT-2:
 <ul> 
- <li> <b>.\Additional_validation_figures\</b>  -  validation figures for various ice shelves around Antarctica/li></li>
+ <li> <b> Additional_validation_figures\</b>  -  validation figures for various ice shelves around Antarctica/li></li>
 </ul> 
   
 User is responsible for accessing data. See [Howard_et_al2026_data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper.
