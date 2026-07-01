@@ -26,9 +26,9 @@ In the Code directory, we also provide:
  <li> <b> aux_files\</b>  -   a set of misc files created and used for plotting and analysis</li>
 </ul>
 
-As discussed in our Supporting Information document, we have also provide additional figures comparing SWOT and ICESAT-2:
+As discussed in our Supporting Information document, we also provide figures corresponding to the SWOT and ICESat-2 comparisons shown in Table S1:
 <ul> 
- <li> <b> Additional_validation_figures\</b>  -  validation figures for various ice shelves around Antarctica/li></li>
+ <li> <b> Additional_validation_figures\</b>  -  validation figures for various ice shelves around Antarctica and table of all ICESat-2 and SWoT overlaps under 24 hrs.  Sites used in Table S1 are marked</li>
 </ul> 
   
 User is responsible for accessing data. See [Howard_et_al2026_data_and_software_access.pdf](docs/Howard_et_al2026_data_and_software_access.pdf)  for links to datasets used in this paper.
