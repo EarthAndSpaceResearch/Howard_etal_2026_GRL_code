@@ -38,3 +38,5 @@ A specific list of SWOT HR Raster and ICESat-2 ATL06 data used for each figure i
 The published analysis and figure preparation was performed in MATLAB.  However, we provide and additional set of code for those users wishing to preform similar analyses with Python.
 
 ![LarsenC swot data](./Picture1.png)
+
+*Composite map of SWOT HR data over Larsen C for the seasonal mask (v9, November 2024 to February 2025)*
