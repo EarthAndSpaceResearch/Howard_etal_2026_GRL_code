@@ -6,7 +6,7 @@ ________________________________________________________________________________
 > Howard, S. L., Katz, Z. S., Padman, L., Siefried, M. R., Abrahams, E., Snow, T. M. (2026). SWOT High-Rate Raster Data Reveals Antarctic Ice Shelf Motion and Change in Response to Ocean and Ice Dynamics. *Geophysical Research Letters*, accepted.
 ________________________________________________________________________________________________
 
-The goal of Howard et al, 2026 was to illustrate the potential applications of SWOT High-Rate raster data over the Antarctic Ice shelves.  As part of this work, we provide an example of the validation of SWOT HR Raster using ICESat-2 ATL06 data, and the application of necessary corrections. 
+The goal of Howard et al, 2026 was to illustrate the potential applications of SWOT High-Rate Raster data over the Antarctic Ice shelves.  As part of this work, we provide an example of the validation of SWOT HR Raster using ICESat-2 ATL06 data, and the application of necessary corrections. 
 
 This repository provides MATLAB scripts to process data and recreate figures from this paper. 
 
