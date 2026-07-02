@@ -1,6 +1,6 @@
 # Howard et al., 2026 GRL code
 
-## Code for anaysis and validation of SWOT High-Rate Raster data over Antarctic Ice Shelves 
+## Code for analysis and validation of SWOT High-Rate Raster data over Antarctic Ice Shelves 
 
 ________________________________________________________________________________________________
 > Howard, S. L., Katz, Z. S., Padman, L., Siefried, M. R., Abrahams, E., Snow, T. M. (2026). SWOT High-Rate Raster Data Reveals Antarctic Ice Shelf Motion and Change in Response to Ocean and Ice Dynamics. *Geophysical Research Letters*, accepted.
